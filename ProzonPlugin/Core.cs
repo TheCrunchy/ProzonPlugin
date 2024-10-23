@@ -33,10 +33,17 @@ namespace ProzonPlugin
             string sourcePrefabFolder = config.FolderPath;
 
             var baseModPath = StoragePath + $"//Content//244850//{config.ModId}//Data//Prefabs";
- 
+            foreach (var file in Directory.GetFiles(baseModPath, "*.sbc", SearchOption.AllDirectories))
+            {
+                File.Delete(file);
+            }
+
+            // Assumes .sbc prefab files
+
             try
             {
-                foreach (var file in Directory.GetFiles(sourcePrefabFolder, "*.sbc"))  // Assumes .sbc prefab files
+                
+                foreach (var file in Directory.GetFiles(sourcePrefabFolder, "*.sbc", SearchOption.AllDirectories))  // Assumes .sbc prefab files
                 {
                     string fileName = Path.GetFileName(file);
                     string destinationFile = Path.Combine(baseModPath, fileName);
@@ -46,11 +53,11 @@ namespace ProzonPlugin
                     Log.Info($"Copied {fileName} to {baseModPath}");
                 }
 
-               
+
             }
             catch (Exception ex)
             {
-               Log.Error(ex);
+                Log.Error(ex);
             }
 
         }
