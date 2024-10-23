@@ -31,8 +31,9 @@ namespace ProzonPlugin
 
             SetupConfig();
             string sourcePrefabFolder = config.FolderPath;
-
+   
             var baseModPath = StoragePath + $"//Content//244850//{config.ModId}//Data//Prefabs";
+            Core.Log.Error($"{sourcePrefabFolder} - {baseModPath}");
             foreach (var file in Directory.GetFiles(baseModPath, "*.sbc", SearchOption.AllDirectories))
             {
                 File.Delete(file);
