@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<PluginManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ProzonFileMover</Name>
+  <Guid>ac51757f-9dd8-497e-81f2-e06b2d579973</Guid>
+  <Version>v1.0</Version>
+</PluginManifest>
